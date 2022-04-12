@@ -44,6 +44,17 @@ def go(args):
     logger.info(f'saving dataframe {args.output_artifact}')
     df.to_csv("clean_sample.csv", index=False)
 
+    # Init w&b artifact object
+    logger.info('Upload to w&b the artifact')
+    artifact = wandb.Artifact(
+        args.output_artifact,
+        type=args.output_type,
+        description=args.output_description,
+    )
+    artifact.add_file("clean_sample.csv")
+    run.log_artifact(artifact)
+
+
     # Finish the run 
     os.remove(args.output_artifact)
     run.finish()
