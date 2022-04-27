@@ -23,11 +23,11 @@ entry_points:
 
       min_price:
         description: The minimum price for the range of outlier
-        type: string
+        type: float
 
       max_price:
         description: The maximum price for the range of outlier
-        type: string
+        type: float
 
 
     command: >-
