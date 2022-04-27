@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-This script download a URL to a local destination
+This script runs the data cleaning
 """
 import argparse
 import logging
@@ -15,6 +15,7 @@ logger = logging.getLogger()
 
 
 def go(args):
+    """Runing data cleaning."""
 
     run = wandb.init(job_type="download_file")
     run.config.update(args)

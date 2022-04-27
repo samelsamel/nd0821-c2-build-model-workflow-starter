@@ -1,3 +1,14 @@
+"""
+Author: Amel Sellami 
+Date creation: 27-04-2022
+
+This file is the main file containing the runs for the all steps: 
+- basic_clean
+- data_check
+- data-split
+- train_random_forest
+- test_regression_model
+"""
 import json
 
 import mlflow
@@ -24,7 +35,10 @@ _steps = [
 # This automatically reads in the configuration
 @hydra.main(config_name='config')
 def go(config: DictConfig):
-
+    """
+    Launch the different steps
+    input: config file
+    """
     # Setup the wandb experiment. All runs will be grouped under this name
     os.environ["WANDB_PROJECT"] = config["main"]["project_name"]
     os.environ["WANDB_RUN_GROUP"] = config["main"]["experiment_name"]

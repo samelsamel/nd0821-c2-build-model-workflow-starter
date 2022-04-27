@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 """
+Author: Amel Sellami 
+Date creation: 27-04-2022
+
 download raw data from w&b and apply some basic data cleaning and export results to a new artifact
 """
 import argparse
@@ -14,7 +17,7 @@ logger = logging.getLogger()
 
 
 def go(args):
-
+    """Download data and perform cleaning and save to w&b"""
     run = wandb.init(job_type="basic_cleaning", project="nyc_airbnb", group="eda", save_code=True)
     run.config.update(args)
 

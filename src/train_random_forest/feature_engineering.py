@@ -1,3 +1,10 @@
+"""
+Author: Amel Sellami 
+Date creation: 27-04-2022
+
+This file contains the feature engineering part. 
+
+"""
 import pandas as pd
 import numpy as np
 

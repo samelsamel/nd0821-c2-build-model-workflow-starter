@@ -1,9 +1,22 @@
+"""
+Author: Amel Sellami 
+Date creation: 27-04-2022
+
+This file is the test file for data checking: 
+- test_column_names
+- test_neighborhood_names
+- test_similar_neigh_distrib
+- test_row_count
+- test_price_range
+"""
+
 import pandas as pd
 import numpy as np
 import scipy.stats
 
 
 def test_column_names(data):
+    """Test the column names."""
 
     expected_colums = [
         "id",
@@ -31,6 +44,7 @@ def test_column_names(data):
 
 
 def test_neighborhood_names(data):
+    """Check the neighborhood names"""
 
     known_names = ["Bronx", "Brooklyn", "Manhattan", "Queens", "Staten Island"]
 
